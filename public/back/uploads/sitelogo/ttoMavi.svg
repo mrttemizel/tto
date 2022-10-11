@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="katman_2" data-name="katman 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1758.08 696.13">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#Adsız_degrade_4-2);
+      }
+
+      .cls-2 {
+        fill: url(#Adsız_degrade_9);
+      }
+
+      .cls-3 {
+        fill: url(#Adsız_degrade_4);
+      }
+
+      .cls-4 {
+        fill: url(#Adsız_degrade_9-2);
+      }
+
+      .cls-5 {
+        fill: #293965;
+        font-family: Georgia-Bold, Georgia;
+        font-size: 150px;
+        letter-spacing: .03em;
+        stroke: #3fa9f5;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+    </style>
+    <linearGradient id="Adsız_degrade_4" data-name="Adsız degrade 4" x1="504.59" y1="16.75" x2="111.5" y2="409.84" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#293965"/>
+      <stop offset="1" stop-color="#3fa9f5"/>
+    </linearGradient>
+    <linearGradient id="Adsız_degrade_9" data-name="Adsız degrade 9" x1="136.8" y1="348.01" x2="2.07" y2="348.01" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#293965"/>
+      <stop offset=".62" stop-color="#3679b8"/>
+      <stop offset="1" stop-color="#3fa9f5"/>
+    </linearGradient>
+    <linearGradient id="Adsız_degrade_9-2" data-name="Adsız degrade 9" x1="575.92" y1="347.13" x2="710.64" y2="347.13" xlink:href="#Adsız_degrade_9"/>
+    <linearGradient id="Adsız_degrade_4-2" data-name="Adsız degrade 4" x1="200.67" y1="683.03" x2="594.28" y2="289.42" xlink:href="#Adsız_degrade_4"/>
+  </defs>
+  <g id="katman_1" data-name="katman 1">
+    <g>
+      <path class="cls-3" d="M633.24,132.12h-143.6v215.02h-134.72V131.2H77.33C142.33,51.23,242.53,0,354.92,0s212.58,51.23,277.59,131.2c.28,.28,.53,.6,.74,.92Z"/>
+      <path class="cls-2" d="M134.72,215.9V480.13H26.49C9.41,439.4,0,394.8,0,348.05v-.92c.14-46.43,9.51-90.76,26.53-131.24h108.19Z"/>
+      <path class="cls-4" d="M709.84,347.13v.92c0,46.43-9.27,90.72-26.11,131.2h-108.62V215.02h107.84c17.23,40.73,26.74,85.33,26.88,132.12Z"/>
+      <path class="cls-1" d="M633.24,564.01c-64.97,80.5-165.48,132.12-278.33,132.12s-213.32-51.61-278.33-132.12H220.19v-216.88h134.72v216.88h278.33Z"/>
+    </g>
+    <text class="cls-5" transform="translate(709.84 158.11)"><tspan x="0" y="0">TEKNOLOJİ </tspan></text>
+    <text class="cls-5" transform="translate(710.74 644.22)"><tspan x="0" y="0">OFİSİ</tspan></text>
+    <text class="cls-5" transform="translate(765.65 400.04)"><tspan x="0" y="0">TRANSFER</tspan></text>
+  </g>
+</svg>

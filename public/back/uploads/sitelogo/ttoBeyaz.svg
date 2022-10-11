@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="katman_2" data-name="katman 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1758.08 696.13">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        font-family: Georgia-Bold, Georgia;
+        font-size: 150px;
+        letter-spacing: .03em;
+        stroke: #fff;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <g id="katman_1" data-name="katman 1">
+    <text/>
+    <text/>
+    <g>
+      <path class="cls-1" d="M633.24,132.12h-143.6v215.02h-134.72V131.2H77.33C142.33,51.23,242.53,0,354.92,0s212.58,51.23,277.59,131.2c.28,.28,.53,.6,.74,.92Z"/>
+      <path class="cls-1" d="M134.72,215.9V480.13H26.49C9.41,439.4,0,394.8,0,348.05v-.92c.14-46.43,9.51-90.76,26.53-131.24h108.19Z"/>
+      <path class="cls-1" d="M709.84,347.13v.92c0,46.43-9.27,90.72-26.11,131.2h-108.62V215.02h107.84c17.23,40.73,26.74,85.33,26.88,132.12Z"/>
+      <path class="cls-1" d="M633.24,564.01c-64.97,80.5-165.48,132.12-278.33,132.12s-213.32-51.61-278.33-132.12H220.19v-216.88h134.72v216.88h278.33Z"/>
+    </g>
+    <text class="cls-2" transform="translate(709.84 158.11)"><tspan x="0" y="0">TEKNOLOJİ </tspan></text>
+    <text class="cls-2" transform="translate(710.74 644.22)"><tspan x="0" y="0">OFİSİ</tspan></text>
+    <text class="cls-2" transform="translate(765.65 400.04)"><tspan x="0" y="0">TRANSFER</tspan></text>
+  </g>
+</svg>
