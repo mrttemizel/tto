@@ -14,11 +14,7 @@ class Project extends Model
     protected $guarded = [];
 
     public function getYurutucu(){
-
-
         return $this->hasOne(User::class,'id','yurutucu_id');
-
-
     }
 
     public function getYurutucuBolum(){

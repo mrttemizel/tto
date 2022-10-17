@@ -24,7 +24,6 @@ class ProjectsController extends Controller
         ]);
     }
 
-
     public function index(){
 
         $userName = Auth::user()->name;
@@ -42,15 +41,7 @@ class ProjectsController extends Controller
             $data = Project::all();
             return view('back.pages.projects.index',compact('data'));
         }
-
-
      }
-
-
-
-
-
-
 
      public function create(){
          return view('back.pages.projects.create',[
@@ -59,13 +50,8 @@ class ProjectsController extends Controller
             'durumu' => Durum::all(),
             'turu' => Turu::all(),
             'parabirimi' => ParaBirimi::all(),
-
-
-
          ]);
      }
-
-
 
 
      public function edit($id){
@@ -83,24 +69,23 @@ class ProjectsController extends Controller
 
 
      public function update(Request $request){
+
+
          $request->validate(
              [
-
                  'projeAdi' => 'required',
                  'yurutucu_id' => 'required',
                  'yurutucuHocaBolumu_id' => 'required',
-
+                 'dosya' => 'mimes:jpeg,png,jpg,svg,doc,docx,odt,pdf,tex,txt,wpd,tiff,tif,csv,psd,key,odp,pps,ppt,pptx,ods,xls,xlsm,xlsx'
              ],[
                  'projeAdi.required' => 'Bu Alan Boş Bırakılamaz',
                  'yurutucu_id.required' => 'Bu Alan Boş Bırakılamaz',
-                 'yurutucuHocaBolumu_id.required' => 'Bu Alan Boş Bırakılamaz',
+                 'dosya.mines' => 'Lütfen docx,pdf,jpg,bmp,png,doc formatıda dosya yüklemeniz gerekmektedir.',
 
              ]
          );
 
         $data = Project::find($request->id);
-
-
 
          if($request->input('proje_gosterimi')=='on')
          {
@@ -127,10 +112,23 @@ class ProjectsController extends Controller
         $data -> parabirimi_id =  $request->input('parabirimi_id');
         $data -> kanit =  $request->input('kanit');
 
+
+         if($request -> hasFile('dosya'))
+         {
+             $destination = 'back/uploads/ek_dosyalar'.$data->dosya;
+             if (\File::exists($destination))
+             {
+                 \File::delete($destination);
+             }
+             $dosya =  $request->file('dosya');
+             $name_dosya = $dosya->getClientOriginalName();
+             $dosya->move('back/uploads/ek_dosyalar',$name_dosya);
+             $data->dosya = $name_dosya;
+         }
+
         $data->save();
         return redirect()->back()->with('status','Proje  Başarılı Bir Şekilde Güncellendi');
      }
-
 
      public  function storeKuruluslar(Request $request)
      {
@@ -194,19 +192,11 @@ class ProjectsController extends Controller
 
     public  function deleteTuru($id)
    {
-
-
-
            $data = Turu::find($id);
-
-
-
            $data->delete();
            return redirect()->back()->with('status','Proje Türü Silme İşlemi Başarılı');
 
-
    }
-
 
    public function store(Request $request)
    {
@@ -216,11 +206,11 @@ class ProjectsController extends Controller
             'projeAdi' => 'required',
             'yurutucu_id' => 'required',
             'yurutucuHocaBolumu_id' => 'required',
-
+            'dosya' => 'mimes:docx,pdf,jpg,bmp,png,doc',
         ],[
         'projeAdi.required' => 'Bu Alan Boş Bırakılamaz',
         'yurutucu_id.required' => 'Bu Alan Boş Bırakılamaz',
-        'yurutucuHocaBolumu_id.required' => 'Bu Alan Boş Bırakılamaz',
+        'dosya.mines' => 'Lütfen docx,pdf,jpg,bmp,png,doc formatıda dosya yüklemeniz gerekmektedir.',
 
     ]
     );
@@ -244,8 +234,16 @@ class ProjectsController extends Controller
     $data -> parabirimi_id =  $request->input('parabirimi_id');
     $data -> kanit =  $request->input('kanit');
 
+       if($request -> hasFile('dosya'))
+       {
+           $dosya =  $request->file('dosya');
+           $name_dosya = $dosya->getClientOriginalName();
+           $dosya->move('back/uploads/ek_dosyalar',$name_dosya);
+           $data->dosya = $name_dosya;
+       }
+
     $data->save();
-    return redirect()->back()->with('status','Proje  Başarılı Bir Şekilde Eklendi');
+    return redirect()->route('projects.index')->with('status','Proje  Başarılı Bir Şekilde Eklendi');
    }
 
 
@@ -253,11 +251,12 @@ class ProjectsController extends Controller
     {
         $data = Project::find($id);
 
+        $destination = 'back/uploads/ek_dosyalar'.$data->dosya;
+        if(\File::exists($destination))
+        {
+            \File::delete($destination);
+        }
         $data->delete();
         return redirect()->back()->with('status','Proje Silme İşlemi Başarılı');
     }
-
-
-
-
 }

@@ -187,6 +187,15 @@
                     </div>
 
                 </div>
+                <div class="row">
+                    <div class="mb-3 col-12">
+                        <label class="form-label">Ek Dosya:</label>
+                        <input type="file" name="dosya" class="form-control">
+                        <span class="text-danger">@error('dosya'){{ $message }}@enderror</span>
+
+                    </div>
+
+                </div>
 
                 <div class="form-group mb-3">
                     <button type="submit" class="btn btn-primary">Ekle</button>

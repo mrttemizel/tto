@@ -262,6 +262,16 @@
                 </div>
 
             </div>
+            <div class="row">
+                <div class="mb-3 col-12">
+                    <label class="form-label">Ek Dosya:<a href="{{asset('back/uploads/ek_dosyalar/'.$data->dosya) }}" target="_blank">{{$data -> dosya}}</a>
+                    </label>
+                    <input type="file" name="dosya" value="{{$data -> dosya}}"  class="form-control">
+                    <span class="text-danger">@error('dosya'){{ $message }}@enderror</span>
+
+                </div>
+
+            </div>
 
             <div class="form-group mb-3">
             <button type="submit" class="btn btn-primary">Güncelle</button>

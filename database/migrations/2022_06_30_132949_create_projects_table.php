@@ -25,11 +25,7 @@ return new class extends Migration
             $table->string('apdkkodu')->nullable();
             $table->string('projekodu')->nullable();
             $table->string('kanit')->nullable();
-
-
-
-
-
+            $table->string('dosya')->nullable();
 
 
             $table->boolean('proje_gosterimi')->default(0);

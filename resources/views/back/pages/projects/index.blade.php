@@ -45,6 +45,8 @@
 										<th>Bütçe</th>
 										<th>Para Birimi</th>
 										<th>Kanıt</th>
+										<th>Ek Dosya</th>
+
 										<th>Düzenle</th>
 
 
@@ -79,8 +81,15 @@
                                         <td>{{ $item->butce }}</td>
                                         <td>{{empty($item->getParaBirimi->parabirimi ) ? "Değer Yok":$item->getParaBirimi->parabirimi}}</td>
                                         <td>{{empty($item->kanit ) ? "Değer Yok":$item->kanit }}</td>
+                                        @if(empty($item->dosya))
+                                            Dosya Yüklenmemiş
+                                        @else
+                                            <a href="{{ asset('back/uploads/ek_dosyalar/'.$item->dosya) }}" target="_blank" class="btn btn-success btn-sm">İNDİR</a>
+                                            @endif
+                                            </td>
 
-                                        <td>
+
+                                            <td>
                                             <div class="d-flex align-items-center gap-3 fs-6">
                                             <a href="{{ route('projects.edit', ['id'=>$item->id]) }}" class="text-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Edit info" aria-label="Edit"><i class="bi bi-pencil-fill"></i></a>
                                             <a href="{{ route('projects.delete', ['id'=>$item->id]) }}" class="text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Delete" aria-label="Delete"><i class="bi bi-trash-fill"></i></a>
@@ -115,8 +124,16 @@
                                         <td>{{ $item->butce }}</td>
                                         <td>{{empty($item->getParaBirimi->parabirimi ) ? "Değer Yok":$item->getParaBirimi->parabirimi}}</td>
                                         <td>{{empty($item->kanit ) ? "Değer Yok":$item->kanit }}</td>
+                                        <td class="d-flex ">
+                                        @if(empty($item->dosya))
+                                            Dosya Yüklenmemiş
+                                            @else
+                                                <a href="{{ asset('back/uploads/ek_dosyalar/'.$item->dosya) }}" target="_blank" class="btn btn-success btn-sm">İNDİR</a>
+                                        @endif
+                                        </td>
 
-                                        <td>
+
+                                            <td>
                                             <div class="d-flex align-items-center gap-3 fs-6">
                                             <a href="{{ route('projects.edit', ['id'=>$item->id]) }}" class="text-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Edit info" aria-label="Edit"><i class="bi bi-pencil-fill"></i></a>
                                             <a href="{{ route('projects.delete', ['id'=>$item->id]) }}" class="text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Delete" aria-label="Delete"><i class="bi bi-trash-fill"></i></a>
